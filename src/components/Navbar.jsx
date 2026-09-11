@@ -1,27 +1,29 @@
 const Navbar = () => {
   return (
-    <div className="flex justify-between w-3/4 mt-10">
+    <div className="flex items-center justify-between w-3/4 mt-5 px-5 sm:px-10 md:px-16 lg:px-20 bg-orange-400 rounded-r-xl py-3">
 
-      <div className="ml-20">
-        <div className="font-bold text-2xl">
+      {/* Logo */}
+      <div>
+        <div className="font-bold text-xl sm:text-2xl">
           <span className="text-white">Arif'</span>s
         </div>
       </div>
 
-      <div className="flex gap-15">
-        <p className="font-bold text-xl text-white  hover:text-black  ">
+      {/* Navigation */}
+      <div className="flex gap-4 sm:gap-6 md:gap-10 lg:gap-15">
+        <p className="font-bold text-sm sm:text-base md:text-xl text-white hover:text-black transition-colors duration-300 cursor-pointer">
           .About
         </p>
 
-        <p className="font-bold text-xl text-white hover:text-black  ">
+        <p className="font-bold text-sm sm:text-base md:text-xl text-white hover:text-black transition-colors duration-300 cursor-pointer">
           .Contact
         </p>
 
-        <p className="font-bold text-xl text-white hover:text-black ">
+        <p className="font-bold text-sm sm:text-base md:text-xl text-white hover:text-black transition-colors duration-300 cursor-pointer">
           .Projects
         </p>
       </div>
-
+    
     </div>
   );
 };
