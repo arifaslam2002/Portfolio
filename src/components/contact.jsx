@@ -1,8 +1,8 @@
 import { Mail, Send } from "lucide-react";
-
+import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 const Contact = () => {
   return (
-    <section className="min-h-screen px-5 sm:px-8 md:px-10 py-20 text-white">
+    <section className="border-t border-white/10 min-h-screen px-5 sm:px-8 md:px-10 py-20 text-white">
 
       <div className="max-w-6xl mx-auto">
 
@@ -71,7 +71,7 @@ const Contact = () => {
                 </p>
 
                 <p className="text-white">
-                  your-email@gmail.com
+                  aarifaslam2002@gmail.com
                 </p>
               </div>
             </div>
@@ -91,7 +91,7 @@ const Contact = () => {
                   text-black
                 "
               >
-  
+                <FaGithub size={20} />
               </div>
 
               <div>
@@ -120,6 +120,7 @@ const Contact = () => {
                   text-black
                 "
               >
+                <FaLinkedinIn size={20} />
               </div>
 
               <div>

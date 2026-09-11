@@ -36,7 +36,7 @@ const About = () => {
   ];
 
   return (
-    <section className="min-h-screen px-10 py-20 text-white">
+    <section className="border-t border-white/10 min-h-screen px-10 py-20 text-white">
       <div className="max-w-6xl mx-auto">
 
         {/* Heading */}

@@ -17,7 +17,7 @@ const ProjectImage = ({ image, title }) => {
   const [loading, setLoading] = useState(true);
 
   return (
-    <div className="relative h-80 overflow-hidden rounded-xl bg-black/40">
+    <div className=" relative h-80 overflow-hidden rounded-xl bg-black/40">
       {loading && (
         <div className="absolute inset-0 flex items-center justify-center">
           <LoaderCircle size={35} className="animate-spin text-orange-300" />
@@ -186,7 +186,7 @@ const Projects = () => {
   ];
 
   return (
-    <section className="min-h-screen px-5 md:px-10 py-20 text-white">
+    <section className="border-t border-white/10 min-h-screen px-5 md:px-10 py-20 text-white">
       <div className="max-w-6xl mx-auto">
         {/* Heading */}
         <div className="mb-14">
