@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { LoaderCircle, ExternalLink } from "lucide-react";
+import { FaGithub } from "react-icons/fa";
 
 import expenseImg from "../assets/projects/expense.png";
 import adviseImg from "../assets/projects/advise.png";
@@ -301,7 +302,7 @@ const Projects = () => {
                     duration-300
                   "
                 >
-                  <span>⌘</span>
+                  <FaGithub size={18} />
                   GitHub
                 </a>
 

@@ -51,7 +51,7 @@ const About = () => {
         </div>
 
         {/* Cards */}
-        <div className="grid grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
 
           {cards.map((card, index) => (
             <div
