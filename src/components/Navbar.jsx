@@ -3,23 +3,21 @@ const Navbar = () => {
     <div className="flex justify-between w-3/4 mt-10">
 
       <div className="ml-20">
-        <div className="font-black text-6xl name-animation">
-          <span className="text-green-500">Arif</span>'s
+        <div className="font-bold text-2xl">
+          <span className="text-white">Arif'</span>s
         </div>
-
-        <div className="animated-underline"></div>
       </div>
 
-      <div className="flex gap-7">
-        <p className="font-black text-xl hover:text-amber-50">
+      <div className="flex gap-15">
+        <p className="font-bold text-xl text-white  hover:text-black  ">
           .About
         </p>
 
-        <p className="font-black text-xl hover:text-amber-50">
+        <p className="font-bold text-xl text-white hover:text-black  ">
           .Contact
         </p>
 
-        <p className="font-black text-xl hover:text-amber-50">
+        <p className="font-bold text-xl text-white hover:text-black ">
           .Projects
         </p>
       </div>
