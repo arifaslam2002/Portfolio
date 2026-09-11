@@ -12,7 +12,7 @@ const Navbar = () => {
         flex items-center justify-between
         w-3/4
         mt-5
-        px-5 sm:px-10 md:px-16 lg:px-20
+        px-5 sm:px-5 md:px-16 lg:px-20 sm:justify-between
         bg-orange-400
         rounded-r-xl
         py-3
