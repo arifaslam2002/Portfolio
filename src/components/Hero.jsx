@@ -38,7 +38,67 @@ const Hero = () => {
           responsive, and <br className="hidden lg:block" /> user-friendly web applications.
         </p>
       </div>
+       <div
+  className="
+    absolute
+    z-20
+    top-75
+    left-5
+    sm:left-8
+    md:left-auto
+    md:right-10
+    lg:right-20
+    flex
+    flex-wrap
+    gap-3
+  "
+>
+  {/* View Projects */}
+  <button
+    onClick={() =>
+      document.getElementById("projects")?.scrollIntoView({
+        behavior: "smooth",
+      })
+    }
+    className="
+      px-5
+      py-3
+      rounded-full
+      bg-black
+      text-white
+      font-bold
+      text-sm
+      hover:bg-orange-300
+      hover:text-black
+      transition-all
+      duration-300
+    "
+  >
+    View Projects →
+  </button>
 
+  {/* Download Resume */}
+  <a
+    href="/resume.pdf"
+    download="resume.pdf"
+    className="
+      px-5
+      py-3
+      rounded-full
+      border
+      border-white/30
+      text-white
+      font-bold
+      text-sm
+      hover:bg-white
+      hover:text-black
+      transition-all
+      duration-300
+    "
+  >
+    Download Resume
+  </a>
+</div>
       <div className="relative lg:absolute right-0 lg:right-20 bottom-0 lg:bottom-12 w-full sm:w-80 h-auto sm:h-21 bg-black flex rounded-lg order-3 lg:order-none mt-6 lg:mt-0">
 
         <div>
