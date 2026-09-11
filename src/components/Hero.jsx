@@ -59,14 +59,31 @@ const Hero = () => {
         </div>
 
         {/* Contact shortcut */}
-        <button
-          className="ml-auto mr-3 my-auto flex items-center justify-center
-                     w-10 h-10 rounded-full bg-orange-400
-                     hover:bg-white hover:text-black
-                     transition-all duration-300"
-        >
-          <ArrowUpRight size={22} />
-        </button>
+<button
+  onClick={() =>
+    document.getElementById("contact")?.scrollIntoView({
+      behavior: "smooth",
+    })
+  }
+  className="
+    ml-auto
+    mr-3
+    my-auto
+    flex
+    items-center
+    justify-center
+    w-10
+    h-10
+    rounded-full
+    bg-orange-400
+    hover:bg-white
+    hover:text-black
+    transition-all
+    duration-300
+  "
+>
+  <ArrowUpRight size={22} />
+</button>
 
       </div>
     </div>

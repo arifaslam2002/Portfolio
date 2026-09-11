@@ -186,7 +186,7 @@ const Projects = () => {
   ];
 
   return (
-    <section className="border-t border-white/10 min-h-screen px-5 md:px-10 py-20 text-white">
+    <section id="projects" className="border-t border-white/10 min-h-screen px-5 md:px-10 py-20 text-white">
       <div className="max-w-6xl mx-auto">
         {/* Heading */}
         <div className="mb-14">

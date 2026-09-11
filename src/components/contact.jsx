@@ -2,7 +2,7 @@ import { Mail, Send } from "lucide-react";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 const Contact = () => {
   return (
-    <section className="border-t border-white/10 min-h-screen px-5 sm:px-8 md:px-10 py-20 text-white">
+    <section id="contact" className="border-t border-white/10 min-h-screen px-5 sm:px-8 md:px-10 py-20 text-white">
 
       <div className="max-w-6xl mx-auto">
 
