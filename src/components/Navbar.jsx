@@ -1,5 +1,4 @@
 const Navbar = () => {
-
   const scrollToSection = (sectionId) => {
     document.getElementById(sectionId)?.scrollIntoView({
       behavior: "smooth",
@@ -8,7 +7,7 @@ const Navbar = () => {
 
   return (
     <div
-      className="
+      className="sticky top-5 z-50
         flex items-center justify-between
         w-3/4
         mt-5
@@ -18,21 +17,15 @@ const Navbar = () => {
         py-3
       "
     >
-
       {/* Logo */}
-      <div
-        onClick={() => scrollToSection("home")}
-        className="cursor-pointer"
-      >
+      <div onClick={() => scrollToSection("home")} className="cursor-pointer">
         <div className="font-bold text-xl sm:text-2xl">
           <span className="text-white">Arif'</span>s
         </div>
       </div>
 
-
       {/* Navigation */}
       <div className="flex gap-4 sm:gap-6 md:gap-10 lg:gap-15">
-
         <button
           onClick={() => scrollToSection("about")}
           className="
@@ -47,7 +40,6 @@ const Navbar = () => {
         >
           .About
         </button>
-
 
         <button
           onClick={() => scrollToSection("contact")}
@@ -64,7 +56,6 @@ const Navbar = () => {
           .Contact
         </button>
 
-
         <button
           onClick={() => scrollToSection("projects")}
           className="
@@ -79,9 +70,7 @@ const Navbar = () => {
         >
           .Projects
         </button>
-
       </div>
-
     </div>
   );
 };
