@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { LoaderCircle, ExternalLink } from "lucide-react";
 import { FaGithub } from "react-icons/fa";
@@ -13,14 +14,22 @@ import jobportalImg from "../assets/projects/jobportal.png";
 import recipeImg from "../assets/projects/recipe.png";
 import appointmentImg from "../assets/projects/appointment.png";
 
+
+// ===============================
+// Project Image
+// ===============================
 const ProjectImage = ({ image, title }) => {
   const [loading, setLoading] = useState(true);
 
   return (
-    <div className=" relative h-80 overflow-hidden rounded-xl bg-black/40">
+    <div className="relative h-80 overflow-hidden rounded-xl bg-black/40">
+
       {loading && (
         <div className="absolute inset-0 flex items-center justify-center">
-          <LoaderCircle size={35} className="animate-spin text-orange-300" />
+          <LoaderCircle
+            size={35}
+            className="animate-spin text-orange-300"
+          />
         </div>
       )}
 
@@ -38,11 +47,21 @@ const ProjectImage = ({ image, title }) => {
           ${loading ? "opacity-0" : "opacity-100"}
         `}
       />
+
     </div>
   );
 };
 
+
+// ===============================
+// Projects
+// ===============================
 const Projects = () => {
+
+  // Show only 3 projects initially
+  const [showAll, setShowAll] = useState(false);
+
+
   const projects = [
     {
       id: 1,
@@ -138,7 +157,9 @@ const Projects = () => {
 
       tech: ["React", "Tailwind CSS", "JavaScript"],
 
-      github: "https://github.com/arifaslam2002/Student-Management-Dashboard",
+      github:
+        "https://github.com/arifaslam2002/Student-Management-Dashboard",
+
       live: "https://student-management-dashboard-indol.vercel.app/",
     },
 
@@ -180,174 +201,245 @@ const Projects = () => {
 
       tech: ["React", "Tailwind CSS", "JavaScript"],
 
-      github: "https://github.com/arifaslam2002/Appointment-Scheduler",
+      github:
+        "https://github.com/arifaslam2002/Appointment-Scheduler",
+
       live: "https://appointment-scheduler-nine-beta.vercel.app/",
     },
   ];
 
+
   return (
-    <section id="projects" className="border-t border-white/10 min-h-screen px-5 md:px-10 py-20 text-white">
+    <section
+      id="projects"
+      className="border-t border-white/10 min-h-screen px-5 md:px-10 py-20 text-white"
+    >
+
       <div className="max-w-6xl mx-auto">
+
         {/* Heading */}
         <div className="mb-14">
-          <p className="text-white/50 text-sm tracking-[5px]">MY WORK</p>
 
-          <h2 className="text-5xl md:text-6xl font-bold mt-3">Projects</h2>
+          <p className="text-white/50 text-sm tracking-[5px]">
+            MY WORK
+          </p>
+
+          <h2 className="text-5xl md:text-6xl font-bold mt-3">
+            Projects
+          </h2>
+
         </div>
 
-        {/* One Card Per Row */}
+
+        {/* Project Cards */}
         <div className="grid grid-cols-1 gap-8">
-          {projects.map((project) => (
-            <div
-              key={project.id}
-              className="
-                group
-                relative
-                overflow-hidden
-                p-6 md:p-8
-                rounded-2xl
-                bg-black/30
-                border border-white/10
-                backdrop-blur-sm
-                transition-all
-                duration-500
-                hover:-translate-y-2
-                hover:bg-black/50
-                hover:border-orange-300/40
-                hover:shadow-[0_0_30px_rgba(242,107,56,0.15)]
-              "
-            >
-              {/* Image */}
-              <ProjectImage image={project.image} title={project.title} />
 
-              {/* Number + Task */}
-              <div className="flex justify-between items-center mt-6">
-                <span
-                  className="
-                    text-5xl
-                    font-black
-                    text-white/10
-                    transition-all
-                    duration-500
-                    group-hover:text-orange-300/20
-                  "
-                >
-                  {String(project.id).padStart(2, "0")}
-                </span>
+          {projects
+            .slice(0, showAll ? projects.length : 3)
+            .map((project) => (
 
-                <span className="text-white/30 text-sm">
-                  PROJECT {project.id}/10
-                </span>
-              </div>
-
-              {/* Title */}
-              <h3
-                className="
-                  text-3xl
-                  font-bold
-                  mt-4
-                  transition-all
-                  duration-300
-                  group-hover:text-orange-300
-                "
-              >
-                {project.title}
-              </h3>
-
-              {/* Detailed Description */}
-              <p className="mt-4 text-white/60 leading-7 max-w-5xl">
-                {project.details}
-              </p>
-
-              {/* Technologies */}
-              <div className="flex flex-wrap gap-2 mt-6">
-                {project.tech.map((technology) => (
-                  <span
-                    key={technology}
-                    className="
-                      px-3
-                      py-1
-                      text-xs
-                      rounded-full
-                      bg-white/10
-                      text-white/60
-                      border
-                      border-white/10
-                      transition-all
-                      duration-300
-                      group-hover:border-orange-300/30
-                    "
-                  >
-                    {technology}
-                  </span>
-                ))}
-              </div>
-
-              {/* Links */}
-              <div className="flex flex-wrap gap-6 mt-7">
-                {/* GitHub */}
-                <a
-                  href={project.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="
-                    inline-flex
-                    items-center
-                    gap-2
-                    text-sm
-                    font-bold
-                    text-white/70
-                    hover:text-orange-300
-                    transition-all
-                    duration-300
-                  "
-                >
-                  <FaGithub size={18} />
-                  GitHub
-                </a>
-
-                {/* Live */}
-                <a
-                  href={project.live}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="
-                    inline-flex
-                    items-center
-                    gap-2
-                    text-sm
-                    font-bold
-                    text-white/70
-                    hover:text-orange-300
-                    transition-all
-                    duration-300
-                  "
-                >
-                  <ExternalLink size={18} />
-                  View Live
-                </a>
-              </div>
-
-              {/* Bottom Line */}
               <div
+                key={project.id}
                 className="
-                  absolute
-                  bottom-0
-                  left-0
-                  h-1
-                  w-0
-                  bg-orange-300
+                  group
+                  relative
+                  overflow-hidden
+                  p-6 md:p-8
+                  rounded-2xl
+                  bg-black/30
+                  border border-white/10
+                  backdrop-blur-sm
                   transition-all
                   duration-500
-                  group-hover:w-full
+                  hover:-translate-y-2
+                  hover:bg-black/50
+                  hover:border-orange-300/40
+                  hover:shadow-[0_0_30px_rgba(242,107,56,0.15)]
                 "
-              />
-            </div>
-          ))}
+              >
+
+                {/* Image */}
+                <ProjectImage
+                  image={project.image}
+                  title={project.title}
+                />
+
+
+                {/* Number + Project Count */}
+                <div className="flex justify-between items-center mt-6">
+
+                  <span
+                    className="
+                      text-5xl
+                      font-black
+                      text-white/10
+                      transition-all
+                      duration-500
+                      group-hover:text-orange-300/20
+                    "
+                  >
+                    {String(project.id).padStart(2, "0")}
+                  </span>
+
+                  <span className="text-white/30 text-sm">
+                    PROJECT {project.id}/10
+                  </span>
+
+                </div>
+
+
+                {/* Title */}
+                <h3
+                  className="
+                    text-3xl
+                    font-bold
+                    mt-4
+                    transition-all
+                    duration-300
+                    group-hover:text-orange-300
+                  "
+                >
+                  {project.title}
+                </h3>
+
+
+                {/* Description */}
+                <p className="mt-4 text-white/60 leading-7 max-w-5xl">
+                  {project.details}
+                </p>
+
+
+                {/* Technologies */}
+                <div className="flex flex-wrap gap-2 mt-6">
+
+                  {project.tech.map((technology) => (
+
+                    <span
+                      key={technology}
+                      className="
+                        px-3
+                        py-1
+                        text-xs
+                        rounded-full
+                        bg-white/10
+                        text-white/60
+                        border
+                        border-white/10
+                        transition-all
+                        duration-300
+                        group-hover:border-orange-300/30
+                      "
+                    >
+                      {technology}
+                    </span>
+
+                  ))}
+
+                </div>
+
+
+                {/* Links */}
+                <div className="flex flex-wrap gap-6 mt-7">
+
+                  {/* GitHub */}
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="
+                      inline-flex
+                      items-center
+                      gap-2
+                      text-sm
+                      font-bold
+                      text-white/70
+                      hover:text-orange-300
+                      transition-all
+                      duration-300
+                    "
+                  >
+                    <FaGithub size={18} />
+                    GitHub
+                  </a>
+
+
+                  {/* Live */}
+                  <a
+                    href={project.live}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="
+                      inline-flex
+                      items-center
+                      gap-2
+                      text-sm
+                      font-bold
+                      text-white/70
+                      hover:text-orange-300
+                      transition-all
+                      duration-300
+                    "
+                  >
+                    <ExternalLink size={18} />
+                    View Live
+                  </a>
+
+                </div>
+
+
+                {/* Bottom Line */}
+                <div
+                  className="
+                    absolute
+                    bottom-0
+                    left-0
+                    h-1
+                    w-0
+                    bg-orange-300
+                    transition-all
+                    duration-500
+                    group-hover:w-full
+                  "
+                />
+
+              </div>
+
+            ))}
+
         </div>
+
+
+        {/* View More / View Less */}
+        <div className="flex justify-center mt-12">
+
+          <button
+            onClick={() => setShowAll(!showAll)}
+            className="
+              px-7
+              py-3
+              rounded-full
+              bg-black
+              text-white
+              font-bold
+              border
+              border-white/10
+              hover:bg-orange-300
+              hover:text-black
+              transition-all
+              duration-300
+            "
+          >
+            {showAll ? "View Less ↑" : "View More →"}
+          </button>
+
+        </div>
+
       </div>
+
     </section>
   );
 };
 
+
 export default Projects;
+
