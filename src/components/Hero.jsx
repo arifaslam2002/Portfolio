@@ -53,29 +53,7 @@ const Hero = () => {
     gap-3
   "
 >
-  {/* View Projects */}
-  <button
-    onClick={() =>
-      document.getElementById("projects")?.scrollIntoView({
-        behavior: "smooth",
-      })
-    }
-    className="
-      px-5
-      py-3
-      rounded-full
-      bg-black
-      text-white
-      font-bold
-      text-sm
-      hover:bg-orange-300
-      hover:text-black
-      transition-all
-      duration-300
-    "
-  >
-    View Projects →
-  </button>
+
    {/* View Resume */}
   <a
     href="/resume.pdf"
