@@ -38,7 +38,7 @@ const Navbar = () => {
             cursor-pointer
           "
         >
-          .About
+          About
         </button>
 
         <button
@@ -53,7 +53,7 @@ const Navbar = () => {
             cursor-pointer
           "
         >
-          .Contact
+          Contact
         </button>
 
         <button
@@ -68,7 +68,7 @@ const Navbar = () => {
             cursor-pointer
           "
         >
-          .Projects
+          Projects
         </button>
       </div>
     </div>
